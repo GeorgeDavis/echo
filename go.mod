@@ -5,6 +5,12 @@ go 1.21.0
 require github.com/labstack/echo/v4 v4.11.3
 
 require (
+	github.com/sirupsen/logrus v1.9.0 // indirect
+	golang.org/x/term v0.13.0 // indirect
+)
+
+require (
+	github.com/gobuffalo/logger v1.0.7
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
