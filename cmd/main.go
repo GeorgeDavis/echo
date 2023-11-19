@@ -10,7 +10,7 @@ func main() {
 
 	log := logger.NewLogger("info")
 
-	log.Info("Starting up...")
+	log.Info("Server Starting up...")
 
 	serve(setupServer(log), log)
 }
