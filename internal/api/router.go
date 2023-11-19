@@ -16,13 +16,13 @@ type SetupRouterParams struct {
 
 func SetupRouter(s SetupRouterParams) (http.Handler, error) {
 	// Echo instance
-	echoRouter := echo.New()
+	r := echo.New()
 
 	// Middleware
-	echoRouter.Use(middleware.Logger())
-	echoRouter.Use(middleware.Recover())
+	r.Use(middleware.Logger())
+	r.Use(middleware.Recover())
 
-	echoRouter.GET(routes.Alive, s.HealthProbe.Alive)
+	r.GET(routes.Alive, s.HealthProbe.Alive)
 
-	return echoRouter, nil
+	return r, nil
 }
