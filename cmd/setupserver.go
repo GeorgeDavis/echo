@@ -6,6 +6,7 @@ import (
 
 	"github.com/GeorgeDavis/echo/internal/api"
 	"github.com/GeorgeDavis/echo/internal/healthprobe"
+	"github.com/GeorgeDavis/echo/internal/service"
 	"github.com/gobuffalo/logger"
 )
 
@@ -14,8 +15,14 @@ func setupServer(log logger.Logger) *http.Server {
 		Log: log,
 	})
 
+	userService := service.NewUserService(&service.UserParams{
+		Logger: log,
+	})
+
 	router, err := api.SetupRouter(api.SetupRouterParams{
+		Log:         log,
 		HealthProbe: healthProbeService,
+		UserService: userService,
 	})
 	if err != nil {
 		panic(err)
