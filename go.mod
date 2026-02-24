@@ -2,7 +2,10 @@ module github.com/GeorgeDavis/echo
 
 go 1.21.0
 
-require github.com/labstack/echo/v4 v4.11.3
+require (
+	github.com/google/uuid v1.6.0
+	github.com/labstack/echo/v4 v4.11.3
+)
 
 require (
 	github.com/sirupsen/logrus v1.9.0 // indirect

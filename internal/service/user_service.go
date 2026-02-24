@@ -3,6 +3,7 @@ package service
 import (
 	"github.com/GeorgeDavis/echo/internal/models"
 	"github.com/gobuffalo/logger"
+	"github.com/google/uuid"
 )
 
 type User interface {
@@ -25,7 +26,7 @@ func NewUserService(params *UserParams) *userService {
 
 func (s *userService) GetUserById(userId string) (models.User, error) {
 	return models.User{
-		ID:   "abc123",
+		ID:   uuid.New().String(),
 		Name: "Trapper",
 		Age:  43,
 	}, nil
